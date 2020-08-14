@@ -1,8 +1,12 @@
 defmodule MasteryTest do
   use ExUnit.Case
-  doctest Mastery
+  use QuizBuilders
 
-  test "greets the world" do
-    assert Mastery.hello() == :world
+  test "building compiles the raw template" do
+    fields = template_fields()
+    template = Template.new(fields)
+
+    assert is_nil(Keyword.get(fields, :compiled))
+    assert not is_nil(template.compiled)
   end
 end

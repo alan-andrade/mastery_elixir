@@ -101,7 +101,7 @@ defmodule Mastery.Core.Quiz do
 
     new_templates =
       if new_category_templates == [] do
-        Map.delete(quiz.templates, template.categoy)
+        Map.delete(quiz.templates, template.category)
       else
         Map.put(quiz.templates, template.category, new_category_templates)
       end
